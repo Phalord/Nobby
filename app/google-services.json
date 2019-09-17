@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "272214154978",
+    "firebase_url": "https://nobby-bf108.firebaseio.com",
+    "project_id": "nobby-bf108",
+    "storage_bucket": "nobby-bf108.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:272214154978:android:e2a3129c1ec85b1be8c8bb",
+        "android_client_info": {
+          "package_name": "com.example.nobby"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "272214154978-33ul1bl5a6t140r6kcugq38gfsd11stk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.nobby",
+            "certificate_hash": "e8be1abfa935e09786841f10746d307b859847e4"
+          }
+        },
+        {
+          "client_id": "272214154978-sdp1vhubm0rf00kbd80si21vhvods7sk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBEdihaBWX2rJbQf-ewNhEm282u8RvSCyE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "272214154978-sdp1vhubm0rf00kbd80si21vhvods7sk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
