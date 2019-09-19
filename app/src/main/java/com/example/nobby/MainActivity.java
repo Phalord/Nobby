@@ -183,6 +183,8 @@ public class MainActivity extends AppCompatActivity {
                 case "2":
                     Toast.makeText(MainActivity.this, "Inicio de Sesión correcto"
                             , Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(MainActivity.this, Main2Activity.class);
+                    startActivity(intent);
                     break;
                 case "3":
                     Toast.makeText(MainActivity.this, "Cuenta no activada"
