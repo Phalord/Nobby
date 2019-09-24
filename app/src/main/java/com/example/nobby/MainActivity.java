@@ -180,25 +180,30 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(String answer) {
             super.onPostExecute(answer);
-            switch (answer) {
-                case "1":
-                    Toast.makeText(MainActivity.this, "El formato de correo es erróneo"
-                            , Toast.LENGTH_SHORT).show();
-                    break;
-                case "2":
-                    Toast.makeText(MainActivity.this, "Inicio de Sesión correcto"
-                            , Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(MainActivity.this, Main2Activity.class);
-                    startActivity(intent);
-                    break;
-                case "3":
-                    Toast.makeText(MainActivity.this, "Cuenta no activada"
-                            , Toast.LENGTH_SHORT).show();
-                    break;
-                case "4":
-                    Toast.makeText(MainActivity.this, "Correo o contraseña no coinciden"
-                            , Toast.LENGTH_SHORT).show();
-                    break;
+            if(answer != null) {
+                switch (answer) {
+                    case "1":
+                        Toast.makeText(MainActivity.this, "El formato de correo es erróneo"
+                                , Toast.LENGTH_SHORT).show();
+                        break;
+                    case "2":
+                        Toast.makeText(MainActivity.this, "Inicio de Sesión correcto"
+                                , Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(MainActivity.this, Main2Activity.class);
+                        startActivity(intent);
+                        break;
+                    case "3":
+                        Toast.makeText(MainActivity.this, "Cuenta no activada"
+                                , Toast.LENGTH_SHORT).show();
+                        break;
+                    case "4":
+                        Toast.makeText(MainActivity.this, "Correo o contraseña no coinciden"
+                                , Toast.LENGTH_SHORT).show();
+                        break;
+                }
+            } else {
+                Toast.makeText(MainActivity.this, "Fallo al inicio de sesión"
+                        , Toast.LENGTH_SHORT).show();
             }
         }
     }
