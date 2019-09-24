@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".ConfirmationActivity"></activity>
+        <activity android:name=".ConfirmationActivity"/>
         <activity
             android:name=".Register2Activity"
             android:windowSoftInputMode="adjustResize" />

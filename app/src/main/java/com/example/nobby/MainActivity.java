@@ -1,6 +1,4 @@
 package com.example.nobby;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -24,6 +22,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 import javax.net.ssl.HttpsURLConnection;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
     private Button btnLogin;
@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
                 HttpsURLConnection rsndConnection = (HttpsURLConnection) urls[0].openConnection();
                 BufferedReader bfReader = new BufferedReader(new InputStreamReader(rsndConnection.getInputStream()));
                 String answer = bfReader.readLine();
-                Log.d("tag", answer);
+                //Log.d("tag", answer);
                 bfReader.close();
                 rsndConnection.disconnect();
                 return  answer;
@@ -117,25 +117,30 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(String answer) {
             super.onPostExecute(answer);
-            switch (answer) {
-                case "1":
-                    Toast.makeText(MainActivity.this, "No se ha registrado el correo"
-                            , Toast.LENGTH_SHORT).show();
-                    break;
-                case "2":
-                    Toast.makeText(MainActivity.this, "Se ha reenviado el correo de confirmación"
-                            , Toast.LENGTH_LONG).show();
-                    break;
-                case "3":
-                    Toast.makeText(MainActivity.this, "Formato de email Inválido"
-                            , Toast.LENGTH_SHORT).show();
-                    break;
+            if(answer != null) {
+                switch (answer) {
+                    case "1":
+                        Toast.makeText(MainActivity.this, "No se ha registrado el correo"
+                                , Toast.LENGTH_SHORT).show();
+                        break;
+                    case "2":
+                        Toast.makeText(MainActivity.this, "Se ha reenviado el correo de confirmación"
+                                , Toast.LENGTH_LONG).show();
+                        break;
+                    case "3":
+                        Toast.makeText(MainActivity.this, "Formato de email Inválido"
+                                , Toast.LENGTH_SHORT).show();
+                        break;
+                }
+            } else {
+                Toast.makeText(MainActivity.this, "No hay respuesta del servidor"
+                        , Toast.LENGTH_SHORT).show();
             }
         }
     }
 
     private URL fillResend(String ssResend) {
-        String resendFormat = "P/resend/"+ssResend;
+        String resendFormat = "E/resend/"+ssResend;
         try {
             return new URL("https://nobbyapi.000webhostapp.com/"+resendFormat);
         } catch (MalformedURLException e) {
